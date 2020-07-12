@@ -484,7 +484,7 @@ lws_jwt_sign_compact(struct lws_context *ctx, struct lws_jwk *jwk,
 LWS_VISIBLE LWS_EXTERN int
 lws_jwt_token_sanity(const char *in, size_t in_len,
 		     const char *iss, const char *aud, const char *csrf_in,
-		     char *sub, size_t sub_len, int *secs_left);
+		     char *sub, size_t sub_len, unsigned long *exp_unix_time);
 
 #if defined(LWS_ROLE_H1) || defined(LWS_ROLE_H2)
 
@@ -510,8 +510,9 @@ struct lws_jwt_sign_set_cookie {
 	const char			*csrf_in;
 	/**< validate-entry:
 	 * NULL, or an external CSRF token to check against what is in the JWT */
-	int				secs;
-	/**< sign-entry, validate-exit: seconds the JWT and cookie may live */
+	unsigned long			expiry_unix_time;
+	/**< sign-entry: seconds the JWT and cookie may live,
+	 * validate-exit: expiry unix time */
 };
 
 /**

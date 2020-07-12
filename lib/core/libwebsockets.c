@@ -426,7 +426,7 @@ lws_json_simple_find(const char *buf, size_t len, const char *name, size_t *alen
 	while (np < end && (*np == ' ' || *np == '\t'))
 		np++;
 
-	if (np >= end - 1)
+	if (np >= end)
 		return NULL;
 
 	/*
@@ -452,9 +452,6 @@ lws_json_simple_find(const char *buf, size_t len, const char *name, size_t *alen
 			np++;
 		np++;
 	}
-
-	if (np == end)
-		return NULL;
 
 	*alen = lws_ptr_diff(np, as);
 

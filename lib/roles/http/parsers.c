@@ -1537,7 +1537,8 @@ lws_jwt_get_http_cookie_validate_jwt(struct lws *wsi,
 	 */
 
 	if (lws_jwt_token_sanity(out, cml, i->iss, i->aud, i->csrf_in,
-				 i->sub, sizeof(i->sub), &i->secs)) {
+				 i->sub, sizeof(i->sub),
+				 &i->expiry_unix_time)) {
 		lwsl_notice("%s: jwt sanity failed\n", __func__);
 		return 1;
 	}
@@ -1580,7 +1581,8 @@ lws_jwt_sign_token_set_http_cookie(struct lws *wsi,
 			         "{\"iss\":\"%s\",\"aud\":\"%s\","
 			          "\"iat\":%llu,\"nbf\":%llu,\"exp\":%llu,"
 			          "\"csrf\":\"%s\",\"sub\":\"%s\"%s%s%s}",
-			         i->iss, i->aud, ull, ull - 60, ull + i->secs,
+			         i->iss, i->aud, ull, ull - 60,
+			         ull + i->expiry_unix_time,
 			         csrf, i->sub,
 			         i->extra_json ? ",\"ext\":{" : "",
 			         i->extra_json ? i->extra_json : "",
@@ -1600,8 +1602,8 @@ lws_jwt_sign_token_set_http_cookie(struct lws *wsi,
 			 "Secure;"
 			 "SameSite=strict;"
 			 "Path=/;"
-			 "Max-Age=%u",
-			 i->cookie_name, plain, i->secs);
+			 "Max-Age=%lu",
+			 i->cookie_name, plain, i->expiry_unix_time);
 
 	if (lws_add_http_header_by_token(wsi, WSI_TOKEN_HTTP_SET_COOKIE,
 					 (uint8_t *)temp, n, p, end)) {

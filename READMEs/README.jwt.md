@@ -91,6 +91,21 @@ stored in the browser's password store and receive a new short-term JWT with a
 new random csrf token along with a new page using the new csrf token in its
 links.
 
+## Considerations for long-lived connections
+
+Once established as authorized, websocket links may be very long-lived and hold
+their authorization state at the server.  Although the browser monitoring the
+JWT reloading the page on auth expiry should mitigate this, an attacker can
+choose to just not do that and have an immortally useful websocket link.
+
+At least for actions on the long-lived connection, it should not only confirm
+the JWT authorized it but that the current time is still before the "exp" time
+in the JWT, this is made available as `expiry_unix_time` in the args struct
+after successful validation.
+
+Ideally the server should close long-lived connections according to their auth
+expiry time.
+
 ## JWT lower level APIs
 
 ### Validation of JWT

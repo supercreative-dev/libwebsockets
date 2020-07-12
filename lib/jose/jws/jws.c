@@ -1152,7 +1152,7 @@ int
 lws_jwt_token_sanity(const char *in, size_t in_len,
 		     const char *iss, const char *aud,
 		     const char *csrf_in,
-		     char *sub, size_t sub_len, int *secs_left)
+		     char *sub, size_t sub_len, unsigned long *expiry_unix_time)
 {
 	unsigned long now = lws_now_secs(), exp;
 	const char *cp;
@@ -1229,8 +1229,8 @@ lws_jwt_token_sanity(const char *in, size_t in_len,
 		return 1;
 	}
 
-	if (secs_left)
-		*secs_left = (int)(exp - now);
+	if (expiry_unix_time)
+		*expiry_unix_time = exp;
 
 	return 0;
 }
