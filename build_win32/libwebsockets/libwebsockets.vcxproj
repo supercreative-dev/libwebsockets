@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>
+    </PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F91B263D-6333-3CFF-9023-182B972A61BE}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>libwebsockets</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\Intermediate.$(ProjectName)\</IntDir>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\Intermediate.websockets\</IntDir>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>$(SolutionDir)$(Configuration)\Intermediate.$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\..\include;..\..\lib;.\win32helpers;.\openssl;..\..\lib\plugins;..\..\lib\core;..\..\lib\core-net;..\..\lib\event-libs;..\..\lib\abstract;..\..\lib\tls;..\..\lib\roles;..\..\lib\event-libs\libuv;..\..\lib\event-libs\poll;..\..\lib\event-libs\libevent;..\..\lib\event-libs\glib;..\..\lib\event-libs\libev;..\..\lib\jose\jwe;..\..\lib\jose\jws;..\..\lib\jose;..\..\lib\misc;..\..\lib\roles\http;..\..\lib\roles\http\compression;..\..\lib\roles\h1;..\..\lib\roles\h2;..\..\lib\roles\ws;..\..\lib\roles\cgi;..\..\lib\roles\dbus;..\..\lib\roles\raw-proxy;..\..\lib\system\async-dns;..\..\lib\roles\mqtt;..\..\lib\plat\windows;..\openssl\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;LWS_DLL;LWS_INTERNAL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";websockets_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;LWS_DLL;LWS_INTERNAL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";websockets_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\headers;..\libraries;..\libraries\plugins;..\libraries\core;..\libraries\core-net;..\libraries\event-libs;..\libraries\abstract;..\libraries\tls;..\libraries\roles;..\libraries\event-libs\libuv;..\libraries\event-libs\poll;..\libraries\event-libs\libevent;..\libraries\event-libs\glib;..\libraries\event-libs\libev;..\libraries\jose\jwe;..\libraries\jose\jws;..\libraries\jose;..\libraries\misc;..\libraries\roles\http;..\libraries\roles\http\compression;..\libraries\roles\h1;..\libraries\roles\h2;..\libraries\roles\ws;..\libraries\roles\cgi;..\libraries\roles\dbus;..\libraries\roles\raw-proxy;..\libraries\system\async-dns;..\libraries\roles\mqtt;..\libraries\plat\windows;..\libraries\win32helpers;C:\Program Files (x86)\OpenSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\libwebsockets\include;C:\libwebsockets\plugins;C:\libwebsockets\lib\core;C:\libwebsockets\lib\core-net;C:\libwebsockets\lib\event-libs;C:\libwebsockets\include\abstract;C:\libwebsockets\lib\tls;C:\libwebsockets\lib\roles;C:\libwebsockets\lib\event-libs\libuv;C:\libwebsockets\lib\event-libs\poll;C:\libwebsockets\lib\event-libs\libevent;C:\libwebsockets\lib\event-libs\glib;C:\libwebsockets\lib\event-libs\libev;C:\libwebsockets\lib\jose\jwe;C:\libwebsockets\lib\jose\jws;C:\libwebsockets\lib\jose;C:\libwebsockets\lib\misc;C:\libwebsockets\lib\roles\http;C:\libwebsockets\lib\roles\http\compression;C:\libwebsockets\lib\roles\h1;C:\libwebsockets\lib\roles\h2;C:\libwebsockets\lib\roles\ws;C:\libwebsockets\lib\roles\cgi;C:\libwebsockets\lib\roles\dbus;C:\libwebsockets\lib\roles\raw-proxy;C:\libwebsockets\lib\abstract;C:\libwebsockets\lib\system\async-dns;C:\libwebsockets\lib\roles\mqtt;C:\libwebsockets\lib\plat\windows;C:\libwebsockets\build;C:\libwebsockets\lib;C:\libwebsockets\win32port\win32helpers;C:\Program Files (x86)\OpenSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>libssl.lib;libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\;..\..\include;..\..\lib;.\win32helpers;.\openssl;..\..\lib\plugins;..\..\lib\core;..\..\lib\core-net;..\..\lib\event-libs;..\..\lib\abstract;..\..\lib\tls;..\..\lib\roles;..\..\lib\event-libs\libuv;..\..\lib\event-libs\poll;..\..\lib\event-libs\libevent;..\..\lib\event-libs\glib;..\..\lib\event-libs\libev;..\..\lib\jose\jwe;..\..\lib\jose\jws;..\..\lib\jose;..\..\lib\misc;..\..\lib\roles\http;..\..\lib\roles\http\compression;..\..\lib\roles\h1;..\..\lib\roles\h2;..\..\lib\roles\ws;..\..\lib\roles\cgi;..\..\lib\roles\dbus;..\..\lib\roles\raw-proxy;..\..\lib\system\async-dns;..\..\lib\roles\mqtt;..\..\lib\plat\windows;..\openssl\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LWS_DLL;LWS_INTERNAL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LWS_DLL;LWS_INTERNAL;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";websockets_shared_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\libwebsockets\include;C:\libwebsockets\plugins;C:\libwebsockets\lib\core;C:\libwebsockets\lib\core-net;C:\libwebsockets\lib\event-libs;C:\libwebsockets\include\abstract;C:\libwebsockets\lib\tls;C:\libwebsockets\lib\roles;C:\libwebsockets\lib\event-libs\libuv;C:\libwebsockets\lib\event-libs\poll;C:\libwebsockets\lib\event-libs\libevent;C:\libwebsockets\lib\event-libs\glib;C:\libwebsockets\lib\event-libs\libev;C:\libwebsockets\lib\jose\jwe;C:\libwebsockets\lib\jose\jws;C:\libwebsockets\lib\jose;C:\libwebsockets\lib\misc;C:\libwebsockets\lib\roles\http;C:\libwebsockets\lib\roles\http\compression;C:\libwebsockets\lib\roles\h1;C:\libwebsockets\lib\roles\h2;C:\libwebsockets\lib\roles\ws;C:\libwebsockets\lib\roles\cgi;C:\libwebsockets\lib\roles\dbus;C:\libwebsockets\lib\roles\raw-proxy;C:\libwebsockets\lib\abstract;C:\libwebsockets\lib\system\async-dns;C:\libwebsockets\lib\roles\mqtt;C:\libwebsockets\lib\plat\windows;C:\libwebsockets\build;C:\libwebsockets\lib;C:\libwebsockets\win32port\win32helpers;C:\Program Files (x86)\OpenSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\libwebsockets\include;C:\libwebsockets\plugins;C:\libwebsockets\lib\core;C:\libwebsockets\lib\core-net;C:\libwebsockets\lib\event-libs;C:\libwebsockets\include\abstract;C:\libwebsockets\lib\tls;C:\libwebsockets\lib\roles;C:\libwebsockets\lib\event-libs\libuv;C:\libwebsockets\lib\event-libs\poll;C:\libwebsockets\lib\event-libs\libevent;C:\libwebsockets\lib\event-libs\glib;C:\libwebsockets\lib\event-libs\libev;C:\libwebsockets\lib\jose\jwe;C:\libwebsockets\lib\jose\jws;C:\libwebsockets\lib\jose;C:\libwebsockets\lib\misc;C:\libwebsockets\lib\roles\http;C:\libwebsockets\lib\roles\http\compression;C:\libwebsockets\lib\roles\h1;C:\libwebsockets\lib\roles\h2;C:\libwebsockets\lib\roles\ws;C:\libwebsockets\lib\roles\cgi;C:\libwebsockets\lib\roles\dbus;C:\libwebsockets\lib\roles\raw-proxy;C:\libwebsockets\lib\abstract;C:\libwebsockets\lib\system\async-dns;C:\libwebsockets\lib\roles\mqtt;C:\libwebsockets\lib\plat\windows;C:\libwebsockets\build;C:\libwebsockets\lib;C:\libwebsockets\win32port\win32helpers;C:\Program Files (x86)\OpenSSL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>libssl.lib;libcrypto.lib;ws2_32.lib;userenv.lib;psapi.lib;iphlpapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\openssl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ProgramDataBaseFile>$(SolutionDir)$(Configuration)websockets.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\libwebsockets.h" />
+    <ClInclude Include=".\lws_config.h" />
+    <ClInclude Include="..\..\lib\core\private-lib-core.h" />
+    <ClInclude Include="plugins\ssh-base\include\lws-plugin-ssh.h" />
+    <ClInclude Include="win32helpers\gettimeofday.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\core-net\adopt.c" />
+    <ClCompile Include="..\..\lib\core-net\client.c" />
+    <ClCompile Include="..\..\lib\core-net\close.c" />
+    <ClCompile Include="..\..\lib\core-net\connect.c" />
+    <ClCompile Include="..\..\lib\core-net\dummy-callback.c" />
+    <ClCompile Include="..\..\lib\core-net\network.c" />
+    <ClCompile Include="..\..\lib\core-net\output.c" />
+    <ClCompile Include="..\..\lib\core-net\pollfd.c" />
+    <ClCompile Include="..\..\lib\core-net\sequencer.c" />
+    <ClCompile Include="..\..\lib\core-net\server.c" />
+    <ClCompile Include="..\..\lib\core-net\service.c" />
+    <ClCompile Include="..\..\lib\core-net\sorted-usec-list.c" />
+    <ClCompile Include="..\..\lib\core-net\state.c" />
+    <ClCompile Include="..\..\lib\core-net\stats.c" />
+    <ClCompile Include="..\..\lib\core-net\vhost.c" />
+    <ClCompile Include="..\..\lib\core-net\wsi-timeout.c" />
+    <ClCompile Include="..\..\lib\core-net\wsi.c" />
+    <ClCompile Include="..\..\lib\core\alloc.c" />
+    <ClCompile Include="..\..\lib\core\buflist.c" />
+    <ClCompile Include="..\..\lib\core\context.c" />
+    <ClCompile Include="..\..\lib\core\libwebsockets.c" />
+    <ClCompile Include="..\..\lib\core\logs.c" />
+    <ClCompile Include="..\..\lib\core\lws_dll2.c" />
+    <ClCompile Include="..\..\lib\core\vfs.c" />
+    <ClCompile Include="..\..\lib\event-libs\poll\poll.c" />
+    <ClCompile Include="..\..\lib\misc\base64-decode.c" />
+    <ClCompile Include="..\..\lib\misc\lejp.c" />
+    <ClCompile Include="..\..\lib\misc\lws-ring.c" />
+    <ClCompile Include="..\..\lib\misc\lwsac\cached-file.c" />
+    <ClCompile Include="..\..\lib\misc\lwsac\lwsac.c" />
+    <ClCompile Include="..\..\lib\misc\sha-1.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-fds.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-file.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-init.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-misc.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-pipe.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-plugins.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-service.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-sockets.c" />
+    <ClCompile Include="..\..\lib\roles\h1\ops-h1.c" />
+    <ClCompile Include="..\..\lib\roles\h2\hpack.c" />
+    <ClCompile Include="..\..\lib\roles\h2\http2.c" />
+    <ClCompile Include="..\..\lib\roles\h2\ops-h2.c" />
+    <ClCompile Include="..\..\lib\roles\http\client\client-handshake.c" />
+    <ClCompile Include="..\..\lib\roles\http\client\client-http.c" />
+    <ClCompile Include="..\..\lib\roles\http\header.c" />
+    <ClCompile Include="..\..\lib\roles\http\parsers.c" />
+    <ClCompile Include="..\..\lib\roles\http\server\lws-spa.c" />
+    <ClCompile Include="..\..\lib\roles\http\server\server.c" />
+    <ClCompile Include="..\..\lib\roles\listen\ops-listen.c" />
+    <ClCompile Include="..\..\lib\roles\pipe\ops-pipe.c" />
+    <ClCompile Include="..\..\lib\roles\raw-file\ops-raw-file.c" />
+    <ClCompile Include="..\..\lib\roles\raw-skt\ops-raw-skt.c" />
+    <ClCompile Include="..\..\lib\roles\ws\client-parser-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\client-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\ops-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\server-ws.c" />
+    <ClCompile Include="..\..\lib\system\system.c" />
+    <ClCompile Include="..\..\lib\tls\tls-client.c" />
+    <ClCompile Include="..\..\lib\tls\tls-network.c" />
+    <ClCompile Include="..\..\lib\tls\tls-server.c" />
+    <ClCompile Include="..\..\lib\tls\tls.c" />
+    <ClCompile Include="openssl\openssl-client.c" />
+    <ClCompile Include="openssl\openssl-server.c" />
+    <ClCompile Include="openssl\openssl-ssl.c" />
+    <ClCompile Include="openssl\openssl-tls.c" />
+    <ClCompile Include="openssl\openssl-x509.c" />
+    <ClCompile Include="win32helpers\gettimeofday.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

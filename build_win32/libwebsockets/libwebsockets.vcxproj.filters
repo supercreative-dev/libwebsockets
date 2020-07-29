@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="..\..\include\libwebsockets.h" />
+    <ClInclude Include=".\lws_config.h" />
+    <ClInclude Include="..\..\lib\core\private-lib-core.h" />
+    <ClInclude Include="win32helpers\gettimeofday.h" />
+    <ClInclude Include="plugins\ssh-base\include\lws-plugin-ssh.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers Private">
+      <UniqueIdentifier>{180E0B47-F523-3304-BC5F-6EE428CF3624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers Public">
+      <UniqueIdentifier>{D5E2A411-ACC2-3B6A-A183-B39D4E085B31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{43E1D4C8-32CA-36BF-A730-5EC2DBA6405A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{064314B1-0A13-3B7A-A18F-8834EB82740D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\core-net\adopt.c" />
+    <ClCompile Include="..\..\lib\core-net\client.c" />
+    <ClCompile Include="..\..\lib\core-net\close.c" />
+    <ClCompile Include="..\..\lib\core-net\connect.c" />
+    <ClCompile Include="..\..\lib\core-net\dummy-callback.c" />
+    <ClCompile Include="..\..\lib\core-net\network.c" />
+    <ClCompile Include="..\..\lib\core-net\output.c" />
+    <ClCompile Include="..\..\lib\core-net\pollfd.c" />
+    <ClCompile Include="..\..\lib\core-net\sequencer.c" />
+    <ClCompile Include="..\..\lib\core-net\server.c" />
+    <ClCompile Include="..\..\lib\core-net\service.c" />
+    <ClCompile Include="..\..\lib\core-net\sorted-usec-list.c" />
+    <ClCompile Include="..\..\lib\core-net\state.c" />
+    <ClCompile Include="..\..\lib\core-net\stats.c" />
+    <ClCompile Include="..\..\lib\core-net\vhost.c" />
+    <ClCompile Include="..\..\lib\core-net\wsi-timeout.c" />
+    <ClCompile Include="..\..\lib\core-net\wsi.c" />
+    <ClCompile Include="..\..\lib\core\alloc.c" />
+    <ClCompile Include="..\..\lib\core\buflist.c" />
+    <ClCompile Include="..\..\lib\core\context.c" />
+    <ClCompile Include="..\..\lib\core\libwebsockets.c" />
+    <ClCompile Include="..\..\lib\core\logs.c" />
+    <ClCompile Include="..\..\lib\core\lws_dll2.c" />
+    <ClCompile Include="..\..\lib\core\vfs.c" />
+    <ClCompile Include="..\..\lib\event-libs\poll\poll.c" />
+    <ClCompile Include="..\..\lib\misc\base64-decode.c" />
+    <ClCompile Include="..\..\lib\misc\lejp.c" />
+    <ClCompile Include="..\..\lib\misc\lws-ring.c" />
+    <ClCompile Include="..\..\lib\misc\lwsac\cached-file.c" />
+    <ClCompile Include="..\..\lib\misc\lwsac\lwsac.c" />
+    <ClCompile Include="..\..\lib\misc\sha-1.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-fds.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-file.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-init.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-misc.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-pipe.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-plugins.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-service.c" />
+    <ClCompile Include="..\..\lib\plat\windows\windows-sockets.c" />
+    <ClCompile Include="..\..\lib\roles\h1\ops-h1.c" />
+    <ClCompile Include="..\..\lib\roles\h2\hpack.c" />
+    <ClCompile Include="..\..\lib\roles\h2\http2.c" />
+    <ClCompile Include="..\..\lib\roles\h2\ops-h2.c" />
+    <ClCompile Include="..\..\lib\roles\http\client\client-handshake.c" />
+    <ClCompile Include="..\..\lib\roles\http\client\client-http.c" />
+    <ClCompile Include="..\..\lib\roles\http\header.c" />
+    <ClCompile Include="..\..\lib\roles\http\parsers.c" />
+    <ClCompile Include="..\..\lib\roles\http\server\lws-spa.c" />
+    <ClCompile Include="..\..\lib\roles\http\server\server.c" />
+    <ClCompile Include="..\..\lib\roles\listen\ops-listen.c" />
+    <ClCompile Include="..\..\lib\roles\pipe\ops-pipe.c" />
+    <ClCompile Include="..\..\lib\roles\raw-file\ops-raw-file.c" />
+    <ClCompile Include="..\..\lib\roles\raw-skt\ops-raw-skt.c" />
+    <ClCompile Include="..\..\lib\roles\ws\client-parser-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\client-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\ops-ws.c" />
+    <ClCompile Include="..\..\lib\roles\ws\server-ws.c" />
+    <ClCompile Include="..\..\lib\system\system.c" />
+    <ClCompile Include="..\..\lib\tls\tls-client.c" />
+    <ClCompile Include="..\..\lib\tls\tls-network.c" />
+    <ClCompile Include="..\..\lib\tls\tls-server.c" />
+    <ClCompile Include="..\..\lib\tls\tls.c" />
+    <ClCompile Include="win32helpers\gettimeofday.c" />
+    <ClCompile Include="openssl\openssl-client.c" />
+    <ClCompile Include="openssl\openssl-server.c" />
+    <ClCompile Include="openssl\openssl-ssl.c" />
+    <ClCompile Include="openssl\openssl-tls.c" />
+    <ClCompile Include="openssl\openssl-x509.c" />
+  </ItemGroup>
+</Project>
