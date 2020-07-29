@@ -7,5 +7,5 @@ Libwebsockets (LWS) is a flexible, lightweight pure C library for implementing m
 
 =============
 
-libwebsockets v4.0-stable
-openssl-1.1.1g
+  libwebsockets v4.0-stable
+  openssl-1.1.1g
